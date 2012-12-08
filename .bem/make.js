@@ -6,9 +6,11 @@
 
 MAKE.decl('Arch', {
 
-    blocksLevelsRegexp: /^.+?\.blocks/,
-
-    bundlesLevelsRegexp: /^.+?\.bundles$/,
+    getBundlesLevels: function() {
+        return [
+            'posts'
+        ];
+    },
 
     getLibraries: function() {
 
