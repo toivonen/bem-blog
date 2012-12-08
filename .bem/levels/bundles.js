@@ -18,5 +18,5 @@ exports.getTechs = function() {
 
 
 // Create bundles in bemjson.js tech
-exports.defaultTechs = ['bemjson.js'];
+exports.defaultTechs = ['md'];
 
