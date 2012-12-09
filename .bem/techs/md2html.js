@@ -1,22 +1,20 @@
-var myPath = require('bem/lib/path'),
-    Template = require('bem/lib/template');
+exports.techMixin = {
 
-exports.techModule = module;
+    getCreateResult: function() {
+        return '111';
+    },
 
-exports.newFileContent = function (vars) {
+    storeCreateResult: function(path, suffix, res, force) {
+        // always overwrite html files
+        return this.__base(path, suffix, res, true);
+    },
 
-    return Template.process([
-        "({",
-        "    block: 'b-page',",
-        "    title: '{{bemBlockName}}',",
-        "    head: [",
-        "        { elem: 'css', url: '_{{bemBlockName}}.css', ie: false},",
-        "        { elem: 'css', url: '_{{bemBlockName}}', ie: true },",
-        "        { block: 'i-jquery', elem: 'core'},",
-        "        { elem: 'js', url:'_{{bemBlockName}}.js'},",
-        "    ],",
-        "    content: [",
-        "        'block content'",
-        "    ]",
-        "})"], vars);
-};
+    getDependencies: function() {
+        return ['md'];
+    },
+
+    getSuffixes: function() {
+        return ['html'];
+    }
+
+}
