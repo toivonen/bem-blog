@@ -11,6 +11,7 @@ var PATH = require('path'),
 exports.getTechs = function() {
 
     return {
+        'md': '',
         'html': pjoin(PRJ_ROOT, '.bem/techs/md2html.js')
     };
 
