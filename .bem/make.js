@@ -3,6 +3,7 @@
 "use strict";
 
 var BEM = require('bem'),
+    _ = require('underscore'),
     U = BEM.util;
 
 //process.env.YENV = 'production';
@@ -23,7 +24,6 @@ MAKE.decl('Arch', {
 
 });
 
-
 MAKE.decl('BundleNode', {
 
     getTechs: function() {
@@ -35,7 +35,7 @@ MAKE.decl('BundleNode', {
 
 });
 
-MAKE.decl('BundleLevelNode', {
+MAKE.decl('BundlesLevelNode', {
 
     // см. https://github.com/bem/bem-tools/blob/master/lib/nodes/level.js
     scanLevelItems: function() {
